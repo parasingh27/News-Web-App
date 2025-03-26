@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="main-nav container flex">
+       <a href="#" onclick="reload()" class="company-logo">
+        <img src="Logo.png" alt="company logo">
+       </a>
+    <div class="nav-links">
+       <ul class="flex">
+        <li class="hower-link nav-item" id="ipl" onclick="onNavItemClick('ipl')">Ipl</li>
+        <li class="hower-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
+        <li class="hower-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
+        <li class="hower-link nav-item" id="bookmarks" onclick="showBookmarks()">Bookmarks</li>
+       </ul>
+    </div>
+    <div class="search-bar flex">
+        <input id="search-text" type="text" class="news-input" placeholder="Search news...">
+        <button id="search-button" class="search-button">Search</button>
+        <button id="theme-toggle" class="theme-toggle">
+            <span class="theme-icon">🌙</span>
+        </button>
+     </div>
+    </div>
+   </nav>
+
+   <main>
+      <div class="trending-topics container">
+         <h2 class="section-title">Trending Topics</h2>
+         <div class="trending-list" id="trending-topics">
+            <!-- Trending topics will be dynamically added here -->
+         </div>
+      </div>
+
+      <div class="categories-bar container">
+         <div class="categories-list" id="categories-list">
+            <!-- Categories will be dynamically added here -->
+         </div>
+      </div>
+
+      <div class="advanced-search container" id="advanced-search">
+        <div class="search-filters">
+            <div class="filter-group">
+                <label>Date Range:</label>
+                <input type="date" id="from-date" class="filter-input">
+                <input type="date" id="to-date" class="filter-input">
+            </div>
+            <div class="filter-group">
+                <label>Sort By:</label>
+                <select id="sort-by" class="filter-input">
+                    <option value="publishedAt">Date</option>
+                    <option value="relevancy">Relevancy</option>
+                    <option value="popularity">Popularity</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Language:</label>
+                <select id="language" class="filter-input">
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                    <option value="fr">French</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Source:</label>
+                <select id="source" class="filter-input">
+                    <option value="">All Sources</option>
+                    <option value="the-times-of-india">Times of India</option>
+                    <option value="the-hindu">The Hindu</option>
+                    <option value="reuters">Reuters</option>
+                    <option value="bloomberg">Bloomberg</option>
+                </select>
+            </div>
+        </div>
+      </div>
+      <div class="cards-container container flex" id="cards-container">
+      </div>
+   </main>
+
+   <template id="template-news-card">
+      <div class="card">
+         <div class="card-header">
+             <img src="https://via.placeholder.com/400x200" alt="news-img" id="news-img">
+             <div class="card-actions">
+                <button class="action-btn bookmark-btn" id="bookmark-btn" title="Bookmark">
+                   <span class="action-icon">🔖</span>
+                </button>
+             </div>
+         </div>
+         <div class="card-content">
+            <h3 id="news-title">this is the title</h3>
+            <h6 class="news-source" id="news-source">End Gadget 29/07/24</h6>
+            <p class="news-desc" id="news-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est sequi nostrum earum ratione laudantium tenetur illum at voluptatem quo quidem, numquam non, nemo itaque velit ut placeat vero facilis accusamus?</p>
+         </div>
+      </div>
+   </template>
+    <script src="script.js"></script>
+</body>
+</html>
